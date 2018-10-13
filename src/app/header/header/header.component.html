@@ -1,0 +1,24 @@
+<ng-container *ngIf="metaData">
+  <nav class="navbar navbar-expand-lg navbar-light bg-ny shadow-sm">
+    <h4 class="navbar-brand text-white">{{metaData.heading}}</h4>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav text-white">
+        <li class="nav-item dropdown list">
+          <h6 class="nav-link dropdown-toggle text-white" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{metaData.period}}
+          </h6>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <span class="dropdown-item list" *ngFor="let period of metaData.periods">
+              {{period}} + {{metaData.days}}
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</ng-container>

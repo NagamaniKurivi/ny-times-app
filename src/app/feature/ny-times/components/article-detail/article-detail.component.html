@@ -1,0 +1,29 @@
+
+<div class="d-flex flex-column mt-1">
+  <div class="p-2 bd-highlight">
+    <button type="button pull-right" class="btn btn-warning" (click)="goBack()">{{articlesMetaData.goback}}</button>
+  </div>
+  <div class="p-2 bd-highlight">
+    <ng-container *ngIf="!selectedArticle">
+      <div class="alert alert-danger" role="alert">
+        {{articlesMetaData.nothing}}
+      </div>
+    </ng-container>
+  </div>
+  <div class="p-2 bd-highlight">
+    <ng-container *ngIf="selectedArticle">
+      <div class="jumbotron">
+        <h1 class="display-5">{{selectedArticle.title}}</h1>
+        <p class="lead">{{selectedArticle.byline}}</p>
+        <hr class="my-4">
+        <p>{{selectedArticle.abstract}}</p>
+        <p>{{selectedArticle.published_date}}</p>
+
+        <p class="mt-2">des_facet</p>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let des of selectedArticle.des_facet">{{des}}</li>
+        </ul>
+      </div>
+    </ng-container>
+  </div>
+</div>
